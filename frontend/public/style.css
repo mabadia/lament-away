@@ -1,0 +1,67 @@
+nav {
+    background-color: cornflowerblue;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav a {
+    color: white;
+    font-size: 1.5em;
+}
+
+nav a:hover {
+    color: lightblue;
+    text-decoration: none;
+}
+
+.active {
+    color: lightblue;
+    text-decoration: none;
+}
+
+#logo {
+    text-decoration: none;
+}
+
+.Link{
+    padding: 5px;
+    display: flex inline-block;
+    
+}
+
+.navbar-nav {
+    float: right;
+}
+
+.home {
+    
+    background-image: url(https://media.licdn.com/dms/image/D5612AQGS63QQrmQacg/article-cover_image-shrink_720_1280/0/1689779556763?e=2147483647&v=beta&t=smq7E4O4QHxPY_jDW4dyYIrgtxCAx6PPr_Y0hXN7Bic);
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 850px;
+  }
+
+.home #search {
+    margin-top: 350px;
+}
+
+.home h2 {
+    color: #ffffff;
+    align-self: center;
+    padding-top: 10px;
+    margin-right: 20px;
+}
+
+h1 {
+    text-align: center;
+}

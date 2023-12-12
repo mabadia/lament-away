@@ -1,6 +1,6 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './Navigation';
-import React from 'react';
 import signUp from './users/signUp';
 import Login from './users/Login';
 import CurrentUserProvider from './contexts/CurrentUser'
@@ -23,7 +23,6 @@ function App() {
         </>
       </BrowserRouter>
     </CurrentUserProvider>
-
   );
 }
 

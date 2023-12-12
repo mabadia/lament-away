@@ -23,7 +23,7 @@ function App() {
         </>
       </BrowserRouter>
     </CurrentUserProvider>
-  );
+  )
 }
 
 export default App;

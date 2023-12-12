@@ -10,10 +10,19 @@ const signUp = () => {
         lastName: '',
         email: '',
         password: '',
+        screenName: '',
     });
 
     async function handleSubmit(e) {
         e.preventDefault();
+
+        const userToSend = {
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email,
+            password: user.password,
+            screenName: user.screenName,
+        };
 
         try {
             const response = await fetch(`http://localhost:3000/users/`, {
@@ -21,7 +30,7 @@ const signUp = () => {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(user),
+                body: JSON.stringify(userToSend),
             });
 
             if (response.ok) {
@@ -87,6 +96,15 @@ const signUp = () => {
                     onChange={handleChange}
                     required
                     id="password"
+                />
+
+                <label htmlFor="screenName">Screen Name</label>
+                <input
+                    required
+                    value={user.screenName}
+                    onChange={(e) => setUser({ ...user, screenName: e.target.value })}
+                    id="screenName"
+                    name="screenName"
                 />
 
                 <input

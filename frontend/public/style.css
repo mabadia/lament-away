@@ -48,9 +48,13 @@ nav a:hover {
     height: 50vh;
     background-repeat: no-repeat;
     background-position: center;
-    padding-left: 850px;
+    padding-left: 605px;
+
   }
 
+.img {
+    border-radius: 100%;
+}
 .home #search {
     margin-top: 350px;
 }
@@ -59,9 +63,33 @@ nav a:hover {
     color: #ffffff;
     align-self: center;
     padding-top: 10px;
-    margin-right: 20px;
+    
+}
+
+.search {
+    padding-left: 95px;
 }
 
 h1 {
     text-align: center;
+}
+
+#lament_input {
+    padding: 100px;
+}
+
+#company_rating{
+    width: 118px;
+}
+
+main {
+    margin-left: 7vw;
+    margin-right: 7vw;
+}
+
+#search_btn {
+    padding-top: 1px;
+    height: 30px;
+    align-items: center;
+    background-color: rgb(157, 180, 249);
 }

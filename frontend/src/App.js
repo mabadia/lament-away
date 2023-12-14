@@ -11,19 +11,19 @@ import Home from './Home';
 function App() {
   return (
     <CurrentUserProvider>
-    <BrowserRouter>
-      <>
-        <Navigation />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/signUp" component={signUp} />
-          <Route exact path="/Login" component={Login} />
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/editJob" element={<EditPlaceForm />}/>
-        </Routes>
-      </>
-    </BrowserRouter>
-  </CurrentUserProvider>
+      <BrowserRouter>
+        <>
+          <Navigation />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/signUp" element={<signUp />} />
+            <Route exact path="/Login" element={<Login />} />
+            <Route exact path="/home" element={<Home />} />
+            <Route exact path="/editJob" element={<EditPlaceForm />} />
+          </Routes>
+        </>
+      </BrowserRouter>
+    </CurrentUserProvider>
   );
 }
 

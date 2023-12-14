@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
+    <Router>
     <div>
       <h2>  Welcome to Your App  </h2>
       <p>   </p>
@@ -11,6 +12,7 @@ const Home = () => {
       {/* Link to the feed */}
       <Link to="/feed">Go to Feed</Link>
     </div>
+    </Router>
   );
 };
 

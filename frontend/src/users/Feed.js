@@ -10,6 +10,7 @@ const Feed = () => {
   }, []);
 
   return (
+    <Router>
     <div>
 
             <h2>FYP</h2>
@@ -19,6 +20,7 @@ const Feed = () => {
 
 
     </div>
+    </Router>
   );
 };
 

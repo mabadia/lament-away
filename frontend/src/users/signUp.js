@@ -51,63 +51,77 @@ const signUp = () => {
         <main>
             <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>
-
-                <label htmlFor='firstName'>First Name:</label>
+                <div className="row">
+                    <div className="col-sm-6 form-group">
+                        <label htmlFor='firstName'>First Name:</label>
+                        <input
+                            required
+                            type="text"
+                            name="firstName"
+                            value={user.firstName}
+                            onChange={(e) =>
+                                setUser({ ...user, firstName: e.target.value })
+                            }
+                            id="firstName"
+                            className="form-control"
+                        />
+                    </div>
+                    <div className="col-sm-6 form-group">
+                        <label htmlFor='lastName'>Last Name:</label>
+                        <input
+                            type="text"
+                            name="lastName"
+                            value={user.lastName}
+                            onChange={(e) =>
+                                setUser({ ...user, lastName: e.target.value })
+                            }
+                            id="lastName"
+                            required
+                            className="form-control"
+                        />
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-sm-6 form-group">
+                        <label htmlFor="email">Email:</label>
+                        <input
+                            type="email"
+                            name="email"
+                            value={user.email}
+                            onChange={(e) =>
+                                setUser({ ...user, lastName: e.target.value })
+                            }
+                            required
+                            id="email"
+                            className="form-control"
+                        />
+                    </div>
+                    <div className="col-sm-6 form-group">
+                        <label>Password:</label>
+                        <input
+                            type="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                            id="password"
+                            className="form-control"
+                        />
+                    </div>
+                    <div className="col-sm-6 form-group">
+                        <label htmlFor="screenName">Screen Name</label>
+                        <input
+                            required
+                            value={user.screenName}
+                            onChange={(e) => setUser({ ...user, screenName: e.target.value })}
+                            id="screenName"
+                            name="screenName"
+                            className="form-control"
+                        />
+                    </div>
+                </div>
                 <input
-                    required
-                    type="text"
-                    name="firstName"
-                    value={user.firstName}
-                    onChange={(e) =>
-                        setUser({ ...user, firstName: e.target.value })
-                    }
-                    id="firstName"
-                />
-
-                <label htmlFor='lastName'>Last Name:</label>
-                <input
-                    type="text"
-                    name="lastName"
-                    value={user.lastName}
-                    onChange={(e) =>
-                        setUser({ ...user, lastName: e.target.value })
-                    }
-                    id="lastName"
-                    required
-                />
-
-                <label htmlFor="email">Email:</label>
-                <input
-                    type="email"
-                    name="email"
-                    value={user.email}
-                    onChange={(e) =>
-                        setUser({ ...user, lastName: e.target.value })
-                    }
-                    required
-                    id="email"
-                />
-
-                <label>Password:</label>
-                <input
-                    type="password"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                    id="password"
-                />
-
-                <label htmlFor="screenName">Screen Name</label>
-                <input
-                    required
-                    value={user.screenName}
-                    onChange={(e) => setUser({ ...user, screenName: e.target.value })}
-                    id="screenName"
-                    name="screenName"
-                />
-
-                <input
+                    className="btn btn-primary"
                     type="submit"
                     value="Sign Up"
                 />

@@ -47,33 +47,38 @@ const Login = () => {
         <main>
             <h1>Login</h1>
             {errorMessage !== null && (
-                <div  role="alert">
+                <div className="alert alert-danger" role="alert">
                     {errorMessage}
                 </div>
             )}
             <form onSubmit={handleSubmit}>
-
-                <label htmlFor="email">Email</label>
-                <input
-                    type="email"
-                    required
-                    value={loginData.email}
-                    onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
-                    id="email"
-                    name="email"
-                />
-
-                <label htmlFor="password">Password</label>
-                <input
-                    type="password"
-                    required
-                    value={loginData.password}
-                    onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
-                    id="password"
-                    name="password"
-                />
-
-                <input type="submit" value="Login" />
+                <div className="row">
+                    <div className="col-sm-6 form-group">
+                        <label htmlFor="email">Email</label>
+                        <input
+                            type="email"
+                            required
+                            value={credentials.email}
+                            onChange={(e) => setCredentials({ ...credentials, email: e.target.value })}
+                            id="email"
+                            name="email"
+                            className="form-control"
+                        />
+                    </div>
+                    <div className="col-sm-6 form-group">
+                        <label htmlFor="password">Password</label>
+                        <input
+                            type="password"
+                            required
+                            value={credentials.password}
+                            onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
+                            id="password"
+                            name="password"
+                            className="form-control"
+                        />
+                    </div>
+                </div>
+                <input className="btn btn-primary" type="submit" value="Login" />
             </form>
         </main>
     )

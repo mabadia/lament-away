@@ -41,7 +41,6 @@ function NewBusinessForms() {
 						name="name"
 					/>
 				</div>
-				
 				<div className="form-group">
 					<label htmlFor="pic">Employments Picture</label>
 					<input

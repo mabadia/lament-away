@@ -1,3 +1,8 @@
+
+body {
+  background-color: #e9dcdc; /* Light pastel gray */
+}
+
 .App {
   text-align: center;
 }
@@ -14,13 +19,13 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #426cbf;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(2em + 2vmin); /* Increased font size */
   color: white;
 }
 
@@ -37,4 +42,63 @@
   }
 }
 
+/* Additional styles to complement Home.css */
 
+.main {
+  text-align: center;
+}
+
+
+
+.home-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #87b9d6;
+  box-shadow: 0 2px 4px rgba(180, 184, 215, 0.1);
+}
+
+/* New styles for header 1 */
+h1 {
+  font-family: 'Arial', sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  color: #121318; 
+  text-decoration: none; 
+  margin-top: 20px, 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2em; 
+  color: #333; 
+  margin-bottom: 20px; 
+}
+
+.search {
+  
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+
+}
+
+#search_btn {
+  margin-right: 40px;
+}
+
+.posts-container {
+  margin-top: 20px;
+}
+
+.post {
+  border: 1px solid #eee;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.post-content {
+  margin-bottom: 10px;
+}

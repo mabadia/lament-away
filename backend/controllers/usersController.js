@@ -1,8 +1,8 @@
-const express = require('express').Router();
-const db = require('../models');
+const router = require('express').Router();
+// const db = require('../models');
 const bcrypt = require('bcrypt');
 
-const { User } = db
+// const { User } = db
 
 // Routes
 router.get('/', async (req, res) => {
@@ -63,7 +63,7 @@ router.post('/', async (req, res) => {
     res.json(user)
 })
 
-app.post('/login', function (req, res) {
+router.post('/login', function (req, res) {
 	var username = req.body.username;
 	var password = req.body.password;
 	var query = "SELECT title FROM user where username = '" + username + "' and password = '" + password + "'";

@@ -5,7 +5,7 @@ function NewBusinessForms() {
 
 	const history = useHistory()
 
-    // eventuallly want to add picture portion, where users can add pictures of establisments
+    // eventually want to add picture portion, where users can add pictures of establisments
 	const [business, setBusiness] = useState({
 		name: '',
 		address: '',

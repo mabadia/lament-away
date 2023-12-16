@@ -6,7 +6,9 @@ import Login from './users/Login';
 import CurrentUserProvider from './contexts/CurrentUser';
 import EditPlaceForm from './jobs/editJobForm';
 import Home from './Home';
+import FYP from './FYP';
 import './App.css';
+
 
 
 
@@ -22,6 +24,7 @@ function App() {
             <Route exact path="/Login" element={<Login />} />
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/editJob" element={<EditPlaceForm />} />
+            <Route exact path="/fyp" element={<FYP />} />
           </Routes>
         </>
       </BrowserRouter>

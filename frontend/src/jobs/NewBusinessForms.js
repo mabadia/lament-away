@@ -1,4 +1,5 @@
-
+import { useState } from "react";
+import { useHistory } from "react-router";
 
 function NewBusinessForms() {
 
@@ -9,7 +10,7 @@ function NewBusinessForms() {
 		pic: '',
 		city: '',
 		state: '',
-		
+
 	})
 
 	async function handleSubmit(e) {
@@ -41,7 +42,6 @@ function NewBusinessForms() {
 						name="name"
 					/>
 				</div>
-				
 				<div className="form-group">
 					<label htmlFor="pic">Employments Picture</label>
 					<input
@@ -72,10 +72,10 @@ function NewBusinessForms() {
 						name="state"
 					/>
 				</div>
-                </form>
+			</form>
 		</main>
 	)
 }
-			
+
 
 export default NewBusinessForms

@@ -21,7 +21,7 @@ import { CDBRating, CDBContainer } from 'cdbreact';
 function EditPlaceForm() {
     return (
         <main>
-			<h1>Edit Place</h1>
+			<h1>Edit Job</h1>
 			{/* <form onSubmit={handleSubmit}> */}
             <InputGroup className="mb-3">
                 <InputGroup.Text id="comapny_name">Company Name</InputGroup.Text>

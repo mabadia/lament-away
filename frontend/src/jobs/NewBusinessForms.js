@@ -5,9 +5,10 @@ function NewBusinessForms() {
 
 	const history = useHistory()
 
+    // eventuallly want to add picture portion, where users can add pictures of establisments
 	const [business, setBusiness] = useState({
 		name: '',
-		pic: '',
+		address: '',
 		city: '',
 		state: '',
 
@@ -43,13 +44,13 @@ function NewBusinessForms() {
 					/>
 				</div>
 				<div className="form-group">
-					<label htmlFor="pic">Employments Picture</label>
+					<label htmlFor="address">Employments Address</label>
 					<input
-						value={business.pic}
-						onChange={e => setBusiness({ ...business, pic: e.target.value })}
+						value={business.address}
+						onChange={e => setBusiness({ ...business, address: e.target.value })}
 						className="form-control"
-						id="pic"
-						name="pic"
+						id="address"
+						name="address"
 					/>
 				</div>
 				<div className="form-group">

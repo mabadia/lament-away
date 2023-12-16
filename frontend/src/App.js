@@ -3,8 +3,6 @@ import { BrowserRouter, Routes, Route, Switch} from 'react-router-dom';
 import Navigation from './Navigation';
 import signUp from './users/signUp';
 import Login from './users/Login';
-import Home from './users/Home' ; 
-import Feed from './users/Feed' ;
 import CurrentUserProvider from './contexts/CurrentUser';
 import EditPlaceForm from './jobs/editJobForm';
 import Home from './Home';
@@ -39,8 +37,7 @@ export default App;
 // {/*Route is path after the route of the home page*/ }
 //           <Route path="/signUp" component={signUp} />
 //           <Route path="/Login" component={Login} />
-//           <Route path="/home" component={Home} />
-//           <Route path="/feed" component={Feed}/>
+//      
 //         </Switch>
 //       </Router>
 //     </CurrentUserProvider>

@@ -2,6 +2,7 @@ import React from "react"
 import { Container } from "react-bootstrap"
 import { Nav } from "react-bootstrap"
 import { Navbar } from "react-bootstrap"
+import Button from 'react-bootstrap/Button';
 
 function Navigation() {
     return (
@@ -14,6 +15,7 @@ function Navigation() {
                     <Nav.Link id="Lament" className="Link" href="/lament">Write a Lament</Nav.Link>
                     <Nav.Link id="About" className="Link" href="/about">About</Nav.Link>
                     <Nav.Link id="Contact" className="Link" href="/contact">Contact</Nav.Link>
+                    <Button variant="secondary" href="/login">Secondary</Button>
                 </Nav>
 
             </Container>

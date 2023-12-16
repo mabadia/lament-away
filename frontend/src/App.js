@@ -9,18 +9,22 @@ import CurrentUserProvider from './contexts/CurrentUser';
 import EditPlaceForm from './jobs/editJobForm';
 import Home from './Home';
 import './App.css';
+// import Login from './users/Login'
+// import SignUp from './users/signUp'
+
 
 function App() {
   return (
-    <CurrentUserProvider>
-      <Router>
-        <Switch>
-          <Route path="/signUp" component={signUp} />
-          <Route path="/Login" component={Login} />
-          <Route path="/home" component={Home} />
-        </Switch>
-      </Router>
-    </CurrentUserProvider>
+    <BrowserRouter>
+    <>
+     <Navigation/>
+      <Routes>
+        <Route exact path="/" element={<Home />}/>
+        <Route exact path="/editJob" element={<EditPlaceForm />}/>
+      </Routes>
+     
+     </>
+    </BrowserRouter>
   );
 }
 
@@ -58,6 +62,38 @@ export default App;
 //           </Routes>
 //         </>
 //       </BrowserRouter>
+//     </CurrentUserProvider>
+//   );
+// }
+// function App() {
+//   return (
+//     <BrowserRouter>
+//     <>
+//      <Navigation/>
+//       <Routes>
+//         <Route exact path="/" element={<Home />}/>
+//         <Route exact path="/editJob" element={<EditPlaceForm />}/>
+//         {/* <Route exact path="/login" element={<Login />}/> */}
+//         {/* <Route exact path="/signUp" element={<SignUp />}/> */}
+//       </Routes>
+     
+//      </>
+//     </BrowserRouter>
+//   );
+// }
+
+// export default App;
+
+// function App() {
+//   return (
+//     <CurrentUserProvider>
+//       <Router>
+//         <Switch>
+//           <Route path="/signUp" component={signUp} />
+//           <Route path="/Login" component={Login} />
+//           <Route path="/home" component={Home} />
+//         </Switch>
+//       </Router>
 //     </CurrentUserProvider>
 //   );
 // }

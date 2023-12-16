@@ -1,9 +1,9 @@
-import React, { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router";
 import { CurrentUser } from "../contexts/CurrentUser";
 
 const Login = () => {
-    const history = useHistory();
+    const history = useNavigate();
     // Using the CurrentUser context to manage the current user state
     const { setCurrentUser } = useContext(CurrentUser)
 

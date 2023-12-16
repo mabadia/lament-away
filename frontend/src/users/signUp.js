@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const signUp = () => {
 
-    const history = useHistory()
+    const history = useNavigate();
 
     const [user, setUser] = useState({
         firstName: '',
@@ -101,7 +101,7 @@ const signUp = () => {
                         <input
                             type="password"
                             name="password"
-                            value={formData.password}
+                            value={user.password}
                             onChange={handleChange}
                             required
                             id="password"

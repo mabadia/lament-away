@@ -18,7 +18,7 @@ import { CDBRating, CDBContainer } from 'cdbreact';
 //     history.push(`/places/${place.placeId}`)
 // }
 
-function EditPlaceForm() {
+function EditJobForm() {
     return (
         <main>
 			<h1>Edit Job</h1>
@@ -56,4 +56,4 @@ function EditPlaceForm() {
 	)
 }
 
-export default EditPlaceForm
+export default EditJobForm

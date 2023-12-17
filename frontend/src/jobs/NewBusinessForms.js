@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router";
 
 function NewBusinessForms() {
 
-	const history = useHistory()
+	const history = useNavigate()
 
     // eventually want to add picture portion, where users can add pictures of establisments
 	const [business, setBusiness] = useState({

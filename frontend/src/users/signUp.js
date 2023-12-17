@@ -35,7 +35,7 @@ const signUp = () => {
 
             if (response.ok) {
                 const userData = await response.json();
-                history.push(`/`);
+                history(`/`);
             } else {
                 // Handle non-successful response (server error)
                 const errorData = await response.json();

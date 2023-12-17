@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useHistory, useParams } from "react-router"
+import { useNavigate, useParams } from "react-router"
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { CDBRating, CDBContainer } from 'cdbreact';

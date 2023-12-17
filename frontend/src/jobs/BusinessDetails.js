@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import CommentCard from './CommentCard';
+import CommentCard from '../CommentCard';
 import NewCommentForm from './NewCommentForm';
 
 function BusinessDetails() {

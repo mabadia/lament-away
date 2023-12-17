@@ -13,8 +13,8 @@ const BusinessIndex = () => {
       <div className="row">
         {jobs.map(jobs => (
           <div className="col-sm-6" key={jobs.jobsId}>
-            <h2><a href="#" onClick={() => history.push(`/jobs/${jobs.jobsID}`)}>{jobs.name}</a></h2>   
-             <img style={{ maxWidth: 200 }} src={jobs.pic} alt={jobs.name} />
+            <h2><a href="#" onClick={() => history.push(`/jobs/${jobs.jobsID}`)}>{jobs.name}</a></h2>
+            <img style={{ maxWidth: 200 }} src={jobs.pic} alt={jobs.name} />
             <p className="text-center">Located in {jobs.city}, {jobs.state}</p>
           </div>
         ))}

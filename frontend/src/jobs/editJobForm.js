@@ -4,19 +4,6 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { CDBRating, CDBContainer } from 'cdbreact';
 
-// async function handleSubmit(e) {
-//     e.preventDefault()
-
-//     await fetch(`http://localhost:5000/places/${place.placeId}`, {
-//         method: 'PUT',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(place)
-//     })
-
-//     history.push(`/places/${place.placeId}`)
-// }
 
 function EditJobForm() {
     return (
@@ -57,3 +44,17 @@ function EditJobForm() {
 }
 
 export default EditJobForm
+
+// async function handleSubmit(e) {
+//     e.preventDefault()
+
+//     await fetch(`http://localhost:5000/places/${place.placeId}`, {
+//         method: 'PUT',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(place)
+//     })
+
+//     history.push(`/places/${place.placeId}`)
+// }

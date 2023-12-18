@@ -1,5 +1,6 @@
 import React from "react";
 
+//This declares a functional component named CommentCard using arrow function syntax. 
 const CommentCard = ({ comment, onDelete }) => (
   <div className="border col-sm-4">
     <h2 className="reviews">{comment.reviews ? 'Bad Reviews! 😡' : 'Good Reviews! 😻'}</h2>

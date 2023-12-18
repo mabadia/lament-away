@@ -3,12 +3,13 @@ import { useParams, useHistory } from 'react-router-dom';
 import CommentCard from './CommentCard';
 import NewCommentForm from './NewCommentForm';
 
+//The component uses the useState and useEffect hooks to manage the state of the job and fetch job details when the component mounts.
 function BusinessDetails() {
   const { jobsId } = useParams(), history = useHistory();
   const [job, setJob] = useState(null);
 
   useEffect(() => { fetch(`http://localhost:3000/jobs/${jobsId}`).then(r => r.json()).then(data => setJob(data)); }, [jobsId]);
-
+//There are functions for editing, deleting the job, deleting a comment, and creating a new comment.
   if (!job) return <h1>Loading</h1>;
 
   const editPlace = () => history.push(`/jobs/${job.jobsId}/edit`);
@@ -16,6 +17,7 @@ function BusinessDetails() {
   const deleteComment = async (c) => { await fetch(`http://localhost:3000/jobs/${job.jobsId}/comments/${c.commentId}`, { method: 'DELETE' }); setJob(p => ({ ...p, reviews: p.reviews.filter(cm => cm.commentId !== c.commentId) })); };
   const createComment = async (cAttrs) => { const r = await fetch(`http://localhost:3000/jobs/${job.jobsId}/comments`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(cAttrs) }); const comment = await r.json(); setJob(p => ({ ...p, reviews: [...p.reviews, comment] })); };
 
+  //It calculates the average rating based on the comments associated with the job and represents it with stars.
   const sumRatings = job.reviews.reduce((tot, c) => tot + c.stars, 0);
   const averageRating = Math.round(sumRatings / job.reviews.length);
   const stars = '⭐️'.repeat(averageRating);

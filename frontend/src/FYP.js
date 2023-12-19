@@ -9,13 +9,10 @@ function FYP() {
 
   ];
 
-
-
   const handleDeleteComment = (commentId) => {
     console.log(`Delete comment with ID: ${commentId}`);
-    // Add logic to handle comment deletion
+   
   };
-
   return (
     <div>
       <h1>For You Page</h1>

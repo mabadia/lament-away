@@ -1,19 +1,16 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './Navigation';
 import signUp from './users/signUp';
 import Login from './users/Login';
 import CurrentUserProvider from './contexts/CurrentUser';
-import EditPlaceForm from './jobs/editJobForm';
+import EditJobForm from './jobs/editJobForm';
 import Home from './Home';
 import FYP from './FYP';
 import './App.css';
 import BusinessIndex from './jobs/BusinessIndex';
 import NewBusinessForms from './jobs/NewBusinessForms';
 import BusinessDetails from './jobs/BusinessDetails';
-
-
-
 
 function App() {
   return (
@@ -41,20 +38,3 @@ function App() {
 
 
 export default App;
-
-// function App() {
-//   return (
-//     <BrowserRouter>
-//     <>
-//      <Navigation/>
-//       <Routes>
-//         <Route exact path="/" element={<Home />}/>
-//         <Route exact path="/editJob" element={<EditPlaceForm />}/>
-//         {/* <Route exact path="/login" element={<Login />}/> */}
-//         {/* <Route exact path="/signUp" element={<SignUp />}/> */}
-//       </Routes>
-     
-//      </>
-//     </BrowserRouter>
-//   );
-// }

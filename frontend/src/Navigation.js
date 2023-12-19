@@ -17,6 +17,7 @@ function Navigation() {
                         <Nav.Link id="About" className="Link" href="/about">About</Nav.Link>
                         <Nav.Link id="Contact" className="Link" href="/contact">Contact</Nav.Link>
                         <Button variant="secondary" href="/login">Log In</Button>
+                        <Button variant="secondary" href="/signUp">Sign-Up</Button>
                     </Nav>
                 </Container>
             </Navbar>

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const BusinessIndex = () => {
   const history = useNavigate();
 
-  const [business, setBusiness] = useState([]);
+  const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:3000/jobs`)

@@ -4,9 +4,10 @@ import commentCard from './commentCard';
 import NewBusinessForm from './NewBusinessForms';
 
 function BusinessDetails() {
-  const { jobsId } = useParams(), history = useNavigate();
+  const { jobsId } = useParams();
+  const history = useNavigate();
 
-  const [business, setBusiness] = useState(null);
+  const [jobs, setJobs] = useState(null);
 
   useEffect(() => {
     fetch(`http://localhost:3000/jobs/${jobsId}`)
@@ -28,28 +29,30 @@ function BusinessDetails() {
 
   const deleteComment = async (c) => {
     await fetch(`http://localhost:3000/jobs/${job.jobsId}/comments/${c.commentId}`,
-      {
-        method: 'DELETE'
-      });
-    setJob(p => (
-      {
-        ...p, reviews: p.reviews.filter(cm => cm.commentId !== c.commentId)
-      }));
+      { method: 'DELETE' });
+    setJobs(p => (
+      { ...p, reviews: p.reviews.filter(cm => cm.commentId !== c.commentId) }));
   };
 
   const createComment = async (cAttrs) => {
-    const r = await fetch(
-      `http://localhost:3000/jobs/${job.jobsId}/comments`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(cAttrs)
-      });
+    const r = await fetch(`http://localhost:3000/jobs/${job.jobsId}/comments`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(cAttrs)
+    });
+
     const comment = await r.json();
+
     setJob(
-      p => (
-        { ...p, reviews: [...p.reviews, comment] }
-      )
+      p => ({
+        ...p,
+        reviews: [
+          ...p.reviews,
+          comment
+        ]
+      })
     );
   };
 
@@ -58,7 +61,7 @@ function BusinessDetails() {
   const stars = '⭐️'.repeat(averageRating);
 
   const reviews = job.reviews.length ? job.reviews.map
-    (c => <CommentCard
+    (c => <commentCard
       key={c.commentId}
       comment={c}
       onDelete={() => deleteComment(c)}

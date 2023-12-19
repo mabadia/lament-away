@@ -1,28 +1,43 @@
-import React from 'react';
-import Home from './Home';
-import CommentCard from './jobs/commentCard';
+import React, { useState } from "react";
+import Home from "./Home";
+import CommentCard from "./jobs/CommentCard";
+import NewComment from "./NewComment";
 
-function FYP() {
-  // You can fetch comments or other data here
-  const comments = [
-    { id: 1, content: 'This is a comment', author: { screenName: 'User1' }, stars: 5 },
 
-  ];
+
+
+function FYP()
+{
+  const [comments, setComments] = useState([
+    { id: 1, content: "This is a comment", author: { screenName: "User1" }, stars: 5 },
+  ]);
 
   const handleDeleteComment = (commentId) => {
-    console.log(`Delete comment with ID: ${commentId}`);
-   
+    const updatedComments = comments.filter((comment) => comment.id !== commentId);
+    setComments(updatedComments);
   };
+
+  const handleAddComment = (newComment) => {
+    setComments([...comments, { ...newComment, id: comments.length + 1 }]);
+  };
+
+
+
+
   return (
     <div>
       <h1>For You Page</h1>
-      {                     }
       <Home />
-      {             }
-      {comments.map(comment => (
-        <CommentCard key={comment.id} comment={comment} onDelete={() => handleDeleteComment(comment.id)} />
+      
+    <div className="fyp-feed">  
+
+      {comments.map((comment) => (
+        <CommentCard key={comment.id} comment={comment} onDelete={handleDeleteComment} />
       ))}
-      {               }
+      <NewComment onAddComment={handleAddComment} />
+
+          </div>
+
     </div>
   );
 }

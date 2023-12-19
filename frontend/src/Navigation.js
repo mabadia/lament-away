@@ -12,16 +12,19 @@ function Navigation() {
             <Container>
                 <Navbar.Brand id="logo" href="/">         </Navbar.Brand>
 
-                        <Nav id="nav" className="me-auto">
+                            <Nav id="nav" className="me-auto">
 
 
                     <Nav.Link id="Home" className="Link" href="/">Home</Nav.Link>
-                    <Nav.Link id="Lament" className="Link" href="/lament">Write a Lament</Nav.Link>
+                                    {/*homepage */}
+                    <Nav.Link id="NewComment" className="Link" href="/new-comment">  Write A Lament </Nav.Link>
+                                    {/* New Comments Page */}
                     <Nav.Link id="About" className="Link" href="/about">About</Nav.Link>
-                    <Nav.Link id="Contact" className="Link" href="/contact">Contact</Nav.Link>
+                                    {/* ABOUT page (Info) */}
                     <Button variant="secondary" href="/login">Log In</Button>
+                                    {/* Log In for our users */}
 
-                       </Nav>
+                            </Nav>
 
             </Container>
         </Navbar>

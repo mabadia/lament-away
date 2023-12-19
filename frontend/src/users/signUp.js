@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
-const signUp = () => {
-
+const SignUp = () => {
     const history = useNavigate();
-
     const [user, setUser] = useState({
         firstName: '',
         lastName: '',
@@ -12,6 +10,10 @@ const signUp = () => {
         password: '',
         screenName: '',
     });
+
+    const handleChange = (e) => {
+        setUser({ ...user, password: e.target.value });
+    };
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -37,12 +39,12 @@ const signUp = () => {
                 const userData = await response.json();
                 history(`/`);
             } else {
-                // Handle non-successful response (server error)
+                //Handle non-successful response 
                 const errorData = await response.json();
                 console.error('Signup failed:', errorData.message);
             }
         } catch (error) {
-            // Handle network errors or other exceptions
+            //Handle network errors or other exceptions
             console.error('Error during signup:', error.message);
         }
     }
@@ -51,85 +53,70 @@ const signUp = () => {
         <main>
             <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>
-                <div className="row">
-                    <div className="col-sm-6 form-group">
-                        <label htmlFor='firstName'>First Name:</label>
-                        <input
-                            required
-                            type="text"
-                            name="firstName"
-                            value={user.firstName}
-                            onChange={(e) =>
-                                setUser({ ...user, firstName: e.target.value })
-                            }
-                            id="firstName"
-                            className="form-control"
-                        />
-                    </div>
-                    <div className="col-sm-6 form-group">
-                        <label htmlFor='lastName'>Last Name:</label>
-                        <input
-                            type="text"
-                            name="lastName"
-                            value={user.lastName}
-                            onChange={(e) =>
-                                setUser({ ...user, lastName: e.target.value })
-                            }
-                            id="lastName"
-                            required
-                            className="form-control"
-                        />
-                    </div>
+
+
+                {                    }
+
+                <div className="col-sm-6 form-group">
+                    <label>Password:</label>
+                    <input
+                        type="password"
+                        name="password"
+                        value={user.password}
+                        onChange={handleChange}
+                        required
+                        id="password"
+                        className="form-control"
+                    />
                 </div>
-                <div className="row">
-                    <div className="col-sm-6 form-group">
-                        <label htmlFor="email">Email:</label>
-                        <input
-                            type="email"
-                            name="email"
-                            value={user.email}
-                            onChange={(e) =>
-                                setUser({ ...user, lastName: e.target.value })
-                            }
-                            required
-                            id="email"
-                            className="form-control"
-                        />
-                    </div>
-                    <div className="col-sm-6 form-group">
-                        <label>Password:</label>
-                        <input
-                            type="password"
-                            name="password"
-                            value={user.password}
-                            onChange={handleChange}
-                            required
-                            id="password"
-                            className="form-control"
-                        />
-                    </div>
-                    <div className="col-sm-6 form-group">
-                        <label htmlFor="screenName">Screen Name</label>
-                        <input
-                            required
-                            value={user.screenName}
-                            onChange={(e) => setUser({ ...user, screenName: e.target.value })}
-                            id="screenName"
-                            name="screenName"
-                            className="form-control"
-                        />
-                    </div>
-                </div>
+
+                {                                    }
+
                 <input
                     className="btn btn-primary"
                     type="submit"
                     value="Sign Up"
                 />
-
             </form>
         </main>
-    )
-}
+    );
+};
+
+export default SignUp;
 
 
-export default signUp
+
+
+
+//changes made and why ---
+
+// 'handleChange' function is not defined
+//   <input
+   // type="password"
+    //name="password"
+  //  value={user.password}
+  //  onChange={handleChange}
+  //  required
+   // id="password"
+  //  className="form-control"
+//      />
+
+
+// 'handleChange' function is defined within the component
+   // const SignUp = () => {
+  // ...
+        //  const handleChange = (e) => {
+       //  setUser({ ...user, password: e.target.value });
+  //  };
+  // ...
+  //<input
+    //  type="password"
+    //  name="password"
+     // value={user.password}
+    //  onChange={handleChange}
+    //  required
+    //  id="password"
+     // className="form-control"
+ // />
+  // ...
+   //     };

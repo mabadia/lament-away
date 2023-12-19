@@ -7,9 +7,8 @@ import CurrentUserProvider from './contexts/CurrentUser';
 import EditPlaceForm from './jobs/editJobForm';
 import Home from './Home';
 import FYP from './FYP';
+import NewComment from './NewComment';
 import './App.css';
-
-
 
 
 function App() {
@@ -25,6 +24,7 @@ function App() {
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/editJob" element={<EditPlaceForm />} />
             <Route exact path="/fyp" element={<FYP />} />
+            <Route path="/new-comment" element={<NewComment />} />
           </Routes>
         </>
       </BrowserRouter>
@@ -32,22 +32,4 @@ function App() {
   );
 }
 
-
 export default App;
-
-// function App() {
-//   return (
-//     <BrowserRouter>
-//     <>
-//      <Navigation/>
-//       <Routes>
-//         <Route exact path="/" element={<Home />}/>
-//         <Route exact path="/editJob" element={<EditPlaceForm />}/>
-//         {/* <Route exact path="/login" element={<Login />}/> */}
-//         {/* <Route exact path="/signUp" element={<SignUp />}/> */}
-//       </Routes>
-     
-//      </>
-//     </BrowserRouter>
-//   );
-// }

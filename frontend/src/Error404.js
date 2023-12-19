@@ -7,6 +7,7 @@ function Error404() {
             <main>
                 <h1>404: PAGE NOT FOUND</h1>
                 <p>Error, page not found</p>
+<<<<<<< Updated upstream
                 <img src="" />
             </main>
         </div>
@@ -14,3 +15,9 @@ function Error404() {
 }
 
 export default Error404;
+=======
+                <img src="https://media.tenor.com/Ty4FhgKM3_8AAAAM/oh-ma-gawd.gif" />
+            </main>
+        </div>
+    )
+>>>>>>> Stashed changes

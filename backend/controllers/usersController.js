@@ -1,10 +1,13 @@
 const router = require('express').Router();
 // const db = require('../models');
 const bcrypt = require('bcrypt');
+const{  Comment } = require('../models'); 
+const { User } = require('../models');
+
 
 // const { User } = db
 
-// Routes
+// Routes 
 router.get('/', async (req, res) => {
     try {
         const users = await User.findAll();
@@ -14,6 +17,31 @@ router.get('/', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
+
+//Create new Comment
+router.post('/comments', async (req, res) => {
+  try {
+    const comment = await Comment.create(req.body);
+    res.json(comment);
+  } catch (error) {
+    console.error('Error creating comment:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+//Get all Comments
+router.get('/comments', async (req, res) => {
+  try {
+    const comments = await Comment.findAll();
+    res.json(comments);
+  } catch (error) {
+    console.error('Error fetching comments:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+router.post('/comments', async (req, res)  => ) 
+
+
 
 // Get user by ID
 router.get('/:id', async (req, res) => {
@@ -86,4 +114,7 @@ router.post('/login', function (req, res) {
 
 });
 
-module.exports = router
+module.exports = router;
+
+
+

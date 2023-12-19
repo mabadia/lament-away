@@ -1,6 +1,4 @@
 import Button from 'react-bootstrap/Button'
-import CommentCard from './jobs/commentCard';
-import FYP from './FYP';
 
 
 function Home() {

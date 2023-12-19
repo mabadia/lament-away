@@ -2,7 +2,6 @@ import Button from 'react-bootstrap/Button'
 import CommentCard from './jobs/commentCard';
 import FYP from './FYP';
 
-const React = require('react')
 
 function Home() {
   return (
@@ -18,8 +17,6 @@ function Home() {
             </div>
           </>
         </div>
-
-
       </main>
     </>
   );

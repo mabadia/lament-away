@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const BusinessIndex = () => {
+const BusinessIndex = (data) => {
   const history = useNavigate();
 
   const [jobs, setJobs] = useState([]);
@@ -13,23 +13,23 @@ const BusinessIndex = () => {
       .catch(error => console.error("Error finnding jobs:", error));
   }, []
   );
-
+  const jobElement = jobs.map((job) => (
+    <div className="col-sm-6" key={job.jobsId}>
+      <h2>
+        <a href="#" onClick={() => history.push(`/jobs/${job.jobsID}`)}>
+          {job.name}
+        </a>
+      </h2>
+      {/* edit img tag to something that goes with code address */}
+      {/* <img style={{ maxWidth: 200 }} src={job.pic} alt={job.name} /> */}
+      <p className="text-center">Located in {job.city}, {job.state}</p>
+    </div>
+  ));
   return (
     <main>
       <h1>Love or Hate Your Current/Former Job?</h1>
       <div className="row">
-        {jobs.map(jobs => (
-          <div className="col-sm-6" key={jobs.jobsId}>
-            <h2>
-              <a href="#" onClick={() => history.push(`/jobs/${jobs.jobsID}`)}>
-                {jobs.name}
-              </a>
-            </h2>
-            {/* edit img tag to something that goes with code address */}
-            <img style={{ maxWidth: 200 }} src={jobs.pic} alt={jobs.name} />
-            <p className="text-center">Located in {jobs.city}, {jobs.state}</p>
-          </div>
-        ))}
+        {jobElement}
       </div>
     </main>
   );

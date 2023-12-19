@@ -11,7 +11,7 @@ function NewBusinessForms() {
 		address: '',
 		city: '',
 		state: '',
-
+		manager: ''
 	})
 
 	async function handleSubmit(e) {
@@ -36,7 +36,7 @@ function NewBusinessForms() {
 					<label htmlFor="name">Employers Name</label>
 					<input
 						required
-						value={business.name}
+						value={jobs.name}
 						onChange={e => setJobs({ ...jobs, name: e.target.value })}
 						className="form-control"
 						id="name"
@@ -46,7 +46,7 @@ function NewBusinessForms() {
 				<div className="form-group">
 					<label htmlFor="address">Employments Address</label>
 					<input
-						value={business.address}
+						value={jobs.address}
 						onChange={e => setJobs({ ...jobs, address: e.target.value })}
 						className="form-control"
 						id="address"
@@ -54,9 +54,19 @@ function NewBusinessForms() {
 					/>
 				</div>
 				<div className="form-group">
+					<label htmlFor="address">Manager's Name</label>
+					<input
+						value={jobs.manager}
+						onChange={e => setJobs({ ...jobs, manager: e.target.value })}
+						className="form-control"
+						id="manager"
+						name="manager"
+					/>
+				</div>
+				<div className="form-group">
 					<label htmlFor="city">City</label>
 					<input
-						value={business.city}
+						value={jobs.city}
 						onChange={e => setJobs({ ...jobs, city: e.target.value })}
 						className="form-control"
 						id="city"
@@ -66,7 +76,7 @@ function NewBusinessForms() {
 				<div className="form-group">
 					<label htmlFor="state">State</label>
 					<input
-						value={business.state}
+						value={jobs.state}
 						onChange={e => setJobs({ ...jobs, state: e.target.value })}
 						className="form-control"
 						id="state"

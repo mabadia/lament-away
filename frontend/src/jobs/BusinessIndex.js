@@ -1,21 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const BusinessIndex = () => {
   const history = useNavigate();
 
-  const [jobs, setJobs] = useState([]);
+  const [business, setBusiness] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "http://localhost:3000/jobs"
-    ).then(
-      r => r.json()
-    ).then(
-      data => setJobs(data)
-    ).catch(
-      error => console.error("Error finnding jobs:", error)
-    );
+    fetch(`http://localhost:3000/jobs`)
+      .then(r => r.json())
+      .then(data => setJobs(data))
+      .catch(error => console.error("Error finnding jobs:", error));
   }, []
   );
 

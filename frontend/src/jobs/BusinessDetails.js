@@ -6,16 +6,12 @@ import NewBusinessForm from './NewBusinessForms';
 function BusinessDetails() {
   const { jobsId } = useParams(), history = useNavigate();
 
-  const [job, setJob] = useState(null);
+  const [business, setBusiness] = useState(null);
 
   useEffect(() => {
-    fetch(
-      `http://localhost:3000/jobs/${jobsId}`
-    ).then(
-      r => r.json()
-    ).then(
-      data => setJob(data)
-    );
+    fetch(`http://localhost:3000/jobs/${jobsId}`)
+      .then(r => r.json())
+      .then(data => setJob(data));
   }, [jobsId]);
 
   if (!job) return <h1>Loading</h1>;

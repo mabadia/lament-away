@@ -1,16 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './Navigation';
+import Error404 from './Error404';
 import signUp from './users/signUp';
 import Login from './users/Login';
 import CurrentUserProvider from './contexts/CurrentUser';
 import EditJobForm from './jobs/editJobForm';
 import Home from './Home';
 import FYP from './FYP';
-import './App.css';
 import BusinessIndex from './jobs/BusinessIndex';
 import NewBusinessForms from './jobs/NewBusinessForms';
 import BusinessDetails from './jobs/BusinessDetails';
+import './App.css';
+
 
 function App() {
   return (

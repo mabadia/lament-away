@@ -39,8 +39,6 @@ router.get('/comments', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
-router.post('/comments', async (req, res)  => ) 
-
 
 
 // Get user by ID

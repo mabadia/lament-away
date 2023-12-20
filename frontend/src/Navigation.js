@@ -31,12 +31,12 @@ function Navigation() {
         )
     }
 
-    let addPlaceButton = null
+    let addBusinessButton = null
     if(currentUser?.role === 'admin'){
-        addPlaceButton = (
+        addBusinessButton = (
            <nav>
             <ul>
-                {addPlaceButton}
+                {addBusinessButton}
             </ul>
            </nav>
         )
@@ -51,12 +51,12 @@ function Navigation() {
                     </a>
                 </li>
                 <li>
-                    <a href="#" onClick={() => history.push("/places")}>
+                    <a href="#" onClick={() => history.push("/jobs")}>
                         Business
                     </a>
                 </li>
                 <li>
-                    <a href="#" onClick={() => history.push("/places/new")}>
+                    <a href="#" onClick={() => history.push("/jobs/new")}>
                         Add Business
                     </a>
                 </li>

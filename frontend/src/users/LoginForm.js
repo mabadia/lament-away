@@ -26,17 +26,20 @@ function LoginForm() {
                 body: JSON.stringify(credentials)
             })
             const data = await response.json()
-            console.log(data)
+            // test
+            // console.log(data)
             if (response.status === 200) {
                 setCurrentUser(data.user)
                 localStorage.setItem('token', data.token);
                 history.push(`/`);
-                console.log('hello')
+                // test
+                // console.log('hello')
             } else {
                 setErrorMessage(data.message)
             }
         } catch (error) {
-            console.error("An error occurred: ", error);
+            // test 
+            // console.error("An error occurred: ", error);
             setErrorMessage("An error occured, please try again");
         }
     }

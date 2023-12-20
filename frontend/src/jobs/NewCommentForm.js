@@ -74,7 +74,7 @@ function NewCommentForm({ place, onSubmit }) {
                     />
                 </div>
                 <div className="form-group col-sm-4">
-                    <label htmlFor="rand">Rant</label>
+                    <label htmlFor="lament">Lament</label>
                     <input
                         checked={place.rant}
                         onClick={e => setComment({ ...comment, rant: e.target.checked })}

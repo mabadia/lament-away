@@ -5,18 +5,18 @@ function BusinessIndex(data) {
 
 	const history = useHistory()
 	
-	const [places, setPlaces] = useState([])
+	const [business, setBusiness] = useState([])
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await fetch(`http://localhost:3000/places`)
+			const response = await fetch(`http://localhost:3000/jobs`)
 			const resData = await response.json()
-			setPlaces(resData)
+			setBusiness(resData)
 		}
 		fetchData()
 	}, [])
 
-	let businessFormatted = places.map((place) => {
+	let businessFormatted = business.map((place) => {
 		return (
 			<div className="col-sm-6" key={place.placeId}>
 				<h2>

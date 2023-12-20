@@ -16,7 +16,8 @@ function NewBusinessForm() {
 
 	async function handleSubmit(e) {
 		e.preventDefault()
-		console.log('Hello world')
+		// test
+		// console.log('Hello world')
 		await fetch(`http://localhost:3000/jobs`, {
 			method: 'POST',
 			headers: {
@@ -31,8 +32,10 @@ function NewBusinessForm() {
 	return (
 		<main>
 			<h1>Add a New Place of Employment</h1>
+			{/* creating a old employer to complain about */}
 			<form onSubmit={handleSubmit}>
 				<div className="form-group">
+					{/* employer Name */}
 					<label htmlFor="name">Employer's Name</label>
 					<input
 						required
@@ -44,6 +47,7 @@ function NewBusinessForm() {
 					/>
 				</div>
 				<div className="form-group">
+					{/* address of employer */}
 					<label htmlFor="address">Employment Address</label>
 					<input
 						required
@@ -54,6 +58,7 @@ function NewBusinessForm() {
 						name="address"
 					/>
 				</div>
+					{/* location of old or current employment  */}
 				<div className="form-group">
 					<label htmlFor="city">City</label>
 					<input

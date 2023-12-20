@@ -8,7 +8,7 @@ body {
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -20,7 +20,7 @@ body {
 
 .App-header {
   background-color: #426cbf;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,6 +54,7 @@ body {
 .home-container {
   max-width: 600px;
   margin: 0 auto;
+  margin-bottom: 20px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -61,7 +62,7 @@ body {
   box-shadow: 0 2px 4px rgba(180, 184, 215, 0.1);
 }
 
-/* New styles for header 1 */
+
 h1 {
   font-family: 'Arial', sans-serif;
   font-size: 2em;
@@ -78,6 +79,47 @@ h2 {
   margin-bottom: 20px; 
 }
 
+h3 {
+
+  text-align: center;
+  font-size: 2.25em; 
+  color: #333; 
+  margin-bottom: 1500px; 
+  background-color: #eceffc; 
+
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(176, 79, 255, 0.1);
+  padding:10px;
+
+  display: flex;
+  flex-direction: column-reverse; /* Start at the top and work it's way down as feed poplates  */
+  align-items: top; 
+
+  border: 1px solid black; 
+  border-radius: 10px; 
+
+}
+
+.static-box {
+  background-color: #8ec8ff; 
+  border-radius: 100px;
+  padding: 70px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; 
+  align-items: top; 
+}
+
+.fyp-feed {
+  background-color: #ec21d1; 
+  border-radius: 10px;
+  box-shadow: 0 60px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column-reverse; 
+  align-items: center; 
+  align-items: top; 
+}
 .search {
   
   margin-top: 20px;

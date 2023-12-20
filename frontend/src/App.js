@@ -9,6 +9,7 @@ import EditJobForm from './jobs/editJobForm';
 import Home from './Home';
 import FYP from './FYP';
 import BusinessIndex from './jobs/BusinessIndex';
+import NewComment from './NewComment';
 import NewBusinessForms from './jobs/NewBusinessForms';
 import BusinessDetails from './jobs/BusinessDetails';
 import './App.css';
@@ -30,6 +31,7 @@ function App() {
             <Route exact path="/jobs/:jobId" element={<BusinessDetails />} />
             <Route exact path="/jobs/:jobId/editJob" element={<EditJobForm />} />
             <Route exact path="/fyp" element={<FYP />} />
+            <Route path="/new-comment" element={<NewComment />} />
             <Route exact path="/" element={<Error404 />} />
           </Routes>
         </>
@@ -38,5 +40,5 @@ function App() {
   );
 }
 
-
 export default App;
+

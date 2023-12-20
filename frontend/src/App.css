@@ -27,6 +27,7 @@ body {
   justify-content: center;
   font-size: calc(2em + 2vmin); /* Increased font size */
   color: white;
+  background-image: url(https://s3-us-west-2.amazonaws.com/thinksaveretire.com/content/images/2020/04/samson-ZGjbiukp_-A-unsplash-RESIZED.jpg);
 }
 
 .App-link {

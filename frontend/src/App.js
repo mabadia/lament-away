@@ -9,10 +9,10 @@ import EditJobForm from './jobs/editJobForm';
 import Home from './Home';
 import FYP from './FYP';
 import BusinessIndex from './jobs/BusinessIndex';
-import NewComment from './NewComment';
+import NewComment from './jobs/NewComment';
 import NewBusinessForms from './jobs/NewBusinessForms';
 import BusinessDetails from './jobs/BusinessDetails';
-import './App.css';
+import '../public/css/App';
 
 
 function App() {

@@ -1,7 +1,5 @@
 
-import React from "react";
-
-function commentCard({ comment, onDelete }) {
+function CommentCard({ comment, onDelete }) {
     return (
         <div className="border col-sm-4">
         <h2 className="reviews">
@@ -21,5 +19,5 @@ function commentCard({ comment, onDelete }) {
     );
 }
 
-export default commentCard;
+export default CommentCard;
 

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import commentCard from './commentCard';
-import NewBusinessForm from './NewBusinessForms';
+import CommentCard from './CommentCard';
+import NewComment from './NewComment';
 
 function BusinessDetails() {
+
   const { jobsId } = useParams();
+
   const history = useNavigate();
+
   const [job, setJob] = useState(null);
 
   useEffect(() => {
@@ -104,7 +107,7 @@ function BusinessDetails() {
       <div className="row">{reviews}</div>
       <hr />
       <h2>Leave your review of this stores location?</h2>
-      <NewCommentForm place={job} onSubmit={createComment} />
+      <NewComment place={job} onSubmit={createComment} />
     </main>
   );
 }

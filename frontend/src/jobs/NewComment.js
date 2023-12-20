@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './NewComment.css';
+import '../public/css/NewComment.css';
 
 function NewComment({ onAddComment }) {
   const [newComment, setNewComment] = useState('');

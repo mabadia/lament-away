@@ -53,10 +53,6 @@ const SignUp = () => {
         <main>
             <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>
-
-
-                {                    }
-
                 <div className="col-sm-6 form-group">
                     <label>Password:</label>
                     <input
@@ -69,9 +65,6 @@ const SignUp = () => {
                         className="form-control"
                     />
                 </div>
-
-                {                                    }
-
                 <input
                     className="btn btn-primary"
                     type="submit"

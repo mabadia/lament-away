@@ -74,7 +74,7 @@ function NewBusinessForm() {
 						name="state"
 					/>
 				</div>
-				<input className="btn btn-primary" type="submit" value="Add Place" />
+				<input className="btn btn-primary" type="submit" value="Add Business" />
 			</form>
 		</main>
 	)

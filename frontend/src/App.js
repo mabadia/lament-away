@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './Home'
-import PlaceIndex from './jobs/PlaceIndex'
+import PlaceIndex from './jobs/BusinessIndex'
 import BusinessDetails from './jobs/BusinessDetails'
 import Navigation from './Navigation'
 import Error404 from './Error404'

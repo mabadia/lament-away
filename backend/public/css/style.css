@@ -1,3 +1,24 @@
+body {
+    background-color: lightblue;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: cornflowerblue;
+}
+
+h2 {
+    color: lightblue;
+}
+
+main {
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 20px;
+    background-color: white;
+}
+
 nav {
     background-color: cornflowerblue;
     padding: 10px;

@@ -14,29 +14,32 @@ function LoginForm() {
     })
 
     const [errorMessage, setErrorMessage] = useState(null)
-  
-    async function handleSubmit(e) {
-        
-        const response = await fetch(`http://localhost:5000/authentication/`, {
-            
-            method: 'POST',
-            // credentials: 'include',
-            headers: {
-        
-                'Content-Type': 'application/json'
-            },
-            
-            body: JSON.stringify(credentials)
-        })
-      
-    
-        const data = await response.json()
-        console.log(data)
-    }
-      
-    
-  
 
+    async function handleSubmit(e) {
+        try {
+            const response = await fetch(`http://localhost:3000/authentication/`, {
+                method: 'POST',
+                // credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(credentials)
+            })
+            const data = await response.json()
+            console.log(data)
+            if (response.status === 200) {
+                setCurrentUser(data.user)
+                localStorage.setItem('token', data.token);
+                history.push(`/`);
+                console.log('hello')
+            } else {
+                setErrorMessage(data.message)
+            }
+        } catch (error) {
+            console.error("An error occurred: ", error);
+            setErrorMessage("An error occured, please try again");
+        }
+    }
 
     return (
         <main>

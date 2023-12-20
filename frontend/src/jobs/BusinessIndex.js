@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 
-function PlaceIndex(data) {
+function BusinessIndex(data) {
 
 	const history = useHistory()
 	
@@ -9,14 +9,14 @@ function PlaceIndex(data) {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await fetch(`http://localhost:5000/places`)
+			const response = await fetch(`http://localhost:3000/places`)
 			const resData = await response.json()
 			setPlaces(resData)
 		}
 		fetchData()
 	}, [])
 
-	let placesFormatted = places.map((place) => {
+	let businessFormatted = places.map((place) => {
 		return (
 			<div className="col-sm-6" key={place.placeId}>
 				<h2>
@@ -34,14 +34,15 @@ function PlaceIndex(data) {
 			</div>
 		)
 	})
+	
 	return (
 		<main>
-			<h1>Places to Rant or Rave About</h1>
+			<h1>Business to Lament About</h1>
 			<div className="row">
-				{placesFormatted}
+				{businessFormatted}
 			</div>
 		</main>
 	)
 }
 
-export default PlaceIndex;
+export default BusinessIndex;

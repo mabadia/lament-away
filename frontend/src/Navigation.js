@@ -11,7 +11,7 @@ function Navigation() {
     let loginActions = (
         <>
             <li style={{ float: 'right' }}>
-                <a href="#" onClick={() => history.push("/sign-up")}>
+                <a href="#" onClick={() => history.push("/signUp")}>
                     Sign Up
                 </a>
             </li>
@@ -26,7 +26,7 @@ function Navigation() {
     if (currentUser) {
         loginActions = (
             <li style={{ float: 'right' }}>
-                Logged in as {currentUser.firstName} {currentUser.lastName}
+                Logged in as {currentUser.username} 
             </li>
         )
     }
@@ -51,13 +51,13 @@ function Navigation() {
                     </a>
                 </li>
                 <li>
-                    <a href="#" onClick={() => history.push("/places")}>
-                        Places
+                    <a href="#" onClick={() => history.push("/jobReviews")}>
+                        Write a Lament
                     </a>
                 </li>
                 <li>
-                    <a href="#" onClick={() => history.push("/places/new")}>
-                        Add Place
+                    <a href="#" onClick={() => history.push("/contact")}>
+                        Contact
                     </a>
                 </li>
                 {loginActions}

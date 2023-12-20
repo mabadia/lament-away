@@ -1,26 +1,69 @@
-import React from "react"
-import { Container } from "react-bootstrap"
-import { Nav } from "react-bootstrap"
-import { Navbar } from "react-bootstrap"
-import Button from 'react-bootstrap/Button';
+import { useState, useEffect, useContext } from 'react'
+import { useHistory } from "react-router";
+import { CurrentUser } from './contexts/CurrentUser';
 
 function Navigation() {
-    return (
-        <>
-        <Navbar>
-            <Container>
-                <Navbar.Brand id="logo" href="/">Lament-Away</Navbar.Brand>
-                <Nav id="nav" classname="me-auto">
-                    <Nav.Link id="Home" className="Link" href="/">Home</Nav.Link>
-                    <Nav.Link id="Lament" className="Link" href="/lament">Write a Lament</Nav.Link>
-                    <Nav.Link id="About" className="Link" href="/about">About</Nav.Link>
-                    <Nav.Link id="Contact" className="Link" href="/contact">Contact</Nav.Link>
-                    <Button variant="secondary" href="/login">Secondary</Button>
-                </Nav>
 
-            </Container>
-        </Navbar>
+    const history = useHistory()
+
+    const { currentUser } = useContext(CurrentUser)
+
+    let loginActions = (
+        <>
+            <li style={{ float: 'right' }}>
+                <a href="#" onClick={() => history.push("/sign-up")}>
+                    Sign Up
+                </a>
+            </li>
+            <li style={{ float: 'right' }}>
+                <a href="#" onClick={() => history.push("/login")}>
+                    Login
+                </a>
+            </li>
         </>
     )
+
+    if (currentUser) {
+        loginActions = (
+            <li style={{ float: 'right' }}>
+                Logged in as {currentUser.firstName} {currentUser.lastName}
+            </li>
+        )
+    }
+
+    let addPlaceButton = null
+    if(currentUser?.role === 'admin'){
+        addPlaceButton = (
+           <nav>
+            <ul>
+                {addPlaceButton}
+            </ul>
+           </nav>
+        )
+    }
+
+    return (
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" onClick={() => history.push("/")}>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onClick={() => history.push("/places")}>
+                        Places
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onClick={() => history.push("/places/new")}>
+                        Add Place
+                    </a>
+                </li>
+                {loginActions}
+            </ul>
+        </nav>
+    )
 }
+
 export default Navigation;

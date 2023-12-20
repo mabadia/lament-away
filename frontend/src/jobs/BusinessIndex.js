@@ -16,20 +16,20 @@ function BusinessIndex(data) {
 		fetchData()
 	}, [])
 
-	let businessFormatted = business.map((place) => {
+	let businessFormatted = business.map((business) => {
 		return (
-			<div className="col-sm-6" key={place.placeId}>
+			<div className="col-sm-6" key={business.businessId}>
 				<h2>
-					<a href="#" onClick={() => history.push(`/places/${place.placeId}`)} >
-						{place.name}
+					<a href="#" onClick={() => history.push(`/jobs/${business.businessId}`)} >
+						{business.name}
 					</a>
 				</h2>
 				<p className="text-center">
-					{place.cuisines}
+					{business.cuisines}
 				</p>
-				<img style={{ maxWidth: 200 }} src={place.pic} alt={place.name} />
+				<img style={{ maxWidth: 200 }} src={business.pic} alt={business.name} />
 				<p className="text-center">
-					Located in {place.city}, {place.state}
+					Located in {business.city}, {business.state}
 				</p>
 			</div>
 		)

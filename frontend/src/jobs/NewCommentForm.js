@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react"
 import { useHistory } from "react-router"
 
-function NewCommentForm({ place, onSubmit }) {
+function NewCommentForm({ business, onSubmit }) {
 
     const [authors, setAuthors] = useState([])
 
     const [comment, setComment] = useState({
         content: '',
-        stars: 3,
-        rant: false,
+        review: '👎',
+        lament: false,
         authorId: ''
     })
 
@@ -16,14 +16,14 @@ function NewCommentForm({ place, onSubmit }) {
         const fetchData = async () => {
             const response = await fetch(`http://localhost:3000/users`)
             const users = await response.json()
-            setComment({ ...comment, authorId: users[0]?.userId})
+            setComment({ ...comment, authorId: users[0]?.username })
             setAuthors(users)
         }
         fetchData()
     }, [])
 
     let authorOptions = authors.map(author => {
-        return <option key={author.userId} value={author.userId}>{author.firstName} {author.lastName}</option>
+        return <option key={author.username} value={author.username}>{author.userName}</option>
     })
 
     function handleSubmit(e) {
@@ -31,9 +31,9 @@ function NewCommentForm({ place, onSubmit }) {
         onSubmit(comment)
         setComment({
             content: '',
-            stars: 3,
-            rant: false,
-            authorId: authors[0]?.userId
+            review: '👎',
+            lament: false,
+            authorId: authors[0]?.username
         })
     }
 
@@ -55,32 +55,33 @@ function NewCommentForm({ place, onSubmit }) {
             <div className="row">
                 <div className="form-group col-sm-4">
                     <label htmlFor="state">Author</label>
-                    <select className="form-control" value={comment.authorId} onChange={e => setComment({ ...comment, authorId: e.target.value })}>
+                    <select
+                        className="form-control"
+                        value={comment.authorId}
+                        onChange={e => setComment({ ...comment, authorId: e.target.value })}
+                    >
                         {authorOptions}
                     </select>
                 </div>
                 <div className="form-group col-sm-4">
-                    <label htmlFor="stars">Star Rating</label>
-                    <input
-                        value={comment.stars}
-                        onChange={e => setComment({ ...comment, stars: e.target.value })}
-                        type="range"
-                        step="0.5"
-                        min="1"
-                        max="5"
-                        id="stars"
-                        name="stars"
+                    <label htmlFor="review">Review</label>
+                    <select
                         className="form-control"
-                    />
+                        value={comment.review}
+                        onChange={e => setComment({ ...comment, review: e.target.value })}
+                    >
+                        <option value="👍">👍 Thumbs Up</option>
+                        <option value="👎">👎 Thumbs Down</option>
+                    </select>
                 </div>
                 <div className="form-group col-sm-4">
                     <label htmlFor="lament">Lament</label>
                     <input
-                        checked={place.rant}
-                        onClick={e => setComment({ ...comment, rant: e.target.checked })}
+                        checked={comment.lament}
+                        onChange={e => setComment({ ...comment, lament: e.target.checked })}
                         type="checkbox"
-                        id="rant"
-                        name="rant"
+                        id="lament"
+                        name="lament"
                         className="form-control"
                     />
                 </div>

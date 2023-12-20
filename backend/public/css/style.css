@@ -1,27 +1,22 @@
-body {
-    background-color: lightblue;
-    text-align: center;
-}
-
-h1 {
-    text-align: center;
-    color: cornflowerblue;
-}
-
-h2 {
-    color: lightblue;
-}
-
-main {
-    margin-right: 20px;
-    margin-left: 20px;
-    padding: 20px;
-    background-color: white;
-}
-
 nav {
     background-color: cornflowerblue;
     padding: 10px;
+    text-decoration: none;
+}
+
+.active {
+    color: lightblue;
+    text-decoration: none;
+}
+
+#logo {
+    text-decoration: none;
+}
+
+.Link {
+    padding: 5px;
+    display: flex inline-block;
+
 }
 
 nav ul {
@@ -44,14 +39,56 @@ nav a:hover {
     text-decoration: none;
 }
 
-form {
-    display: inline;
+.navbar-nav {
+    float: right;
 }
 
-.inactive {
-    color: gray;
+.home {
+
+    background-image: url(https://media.licdn.com/dms/image/D5612AQGS63QQrmQacg/article-cover_image-shrink_720_1280/0/1689779556763?e=2147483647&v=beta&t=smq7E4O4QHxPY_jDW4dyYIrgtxCAx6PPr_Y0hXN7Bic);
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 605px;
+
 }
 
-.border {
-    border: 1px solid gray;
+
+.home #search {
+    margin-top: 350px;
+}
+
+.home h2 {
+    color: #ffffff;
+    align-self: center;
+    padding-top: 10px;
+
+}
+
+.search {
+    padding-left: 95px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#lament_input {
+    padding: 100px;
+}
+
+#company_rating {
+    width: 118px;
+}
+
+main {
+    margin-left: 7vw;
+    margin-right: 7vw;
+}
+
+#search_btn {
+    padding-top: 1px;
+    height: 30px;
+    align-items: center;
+    background-color: rgb(157, 180, 249);
 }

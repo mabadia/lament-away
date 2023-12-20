@@ -5,7 +5,7 @@ import CommentCard from './CommentCard'
 import NewCommentForm from "./NewCommentForm";
 import { CurrentUser } from '../contexts/CurrentUser';
 
-function PlaceDetails() {
+function BusinessDetails() {
 
 	const { placeId } = useParams()
 
@@ -172,4 +172,4 @@ if (currentUser?.role === 'admin') {
 	)
 }
 
-export default PlaceDetails
+export default BusinessDetails

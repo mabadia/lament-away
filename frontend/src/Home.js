@@ -1,18 +1,22 @@
+import Button from 'react-bootstrap/Button'
 
 function Home() {
   return (
-    <main>
-      <h1>HOME</h1>
-      <div >
-        <img height="300" width="500" src="http://localhost:5000/images/chia-fruit-drink.jpg" alt="Chia Fruit Shake" />
-        <div>
-          Photo by <a href="AUTHOR_LINK">Brenda Godinez</a> on <a href="UNSPLASH_LINK">Unsplash</a>
+    <>
+      <main>
+        <h1>Lament-Away</h1>
+        <div className='home'>
+          <>
+            <h2>Rate Your Job Experience Today!</h2>
+            <div className='search'>
+              <Button variant="secondary" id="search_btn">Search</Button>{''}
+              <input type="text" placeholder="Search For Companies Here" id="search" />
+            </div>
+          </>
         </div>
-      </div>
-      <a href="/places">
-        <button className="btn-primary">Places Page</button>
-      </a>
-    </main>
+
+      </main>
+    </>
   );
 }
 

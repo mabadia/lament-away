@@ -1,11 +1,13 @@
-import { useState } from "react"
-import { useHistory } from "react-router"
+import { useState, useEffect } from "react"
+import { useHistory, useParams } from "react-router"
 
-function NewPlaceForm() {
+function EditBusinessForm() {
 
 	const history = useHistory()
 
-	const [place, setPlace] = useState({
+    const { placeId } = useParams()
+
+    const [place, setPlace] = useState({
 		name: '',
 		pic: '',
 		city: '',
@@ -13,23 +15,32 @@ function NewPlaceForm() {
 		cuisines: ''
 	})
 
+	useEffect(() => {
+		const fetchData = async () => {
+			const response = await fetch(`http://localhost:5000/places/${placeId}`)
+			const resData = await response.json()
+			setPlace(resData)
+		}
+		fetchData()
+	}, [ placeId ])
+
 	async function handleSubmit(e) {
 		e.preventDefault()
-		console.log('Hello world')
-		await fetch(`http://localhost:5000/places`, {
-			method: 'POST',
+
+		await fetch(`http://localhost:5000/places/${place.placeId}`, {
+			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify(place)
 		})
 
-		history.push('/places')
+		history.push(`/places/${place.placeId}`)
 	}
 
 	return (
 		<main>
-			<h1>Add a New Place</h1>
+			<h1>Edit Place</h1>
 			<form onSubmit={handleSubmit}>
 				<div className="form-group">
 					<label htmlFor="name">Place Name</label>
@@ -91,10 +102,10 @@ function NewPlaceForm() {
 						className="form-control"
 						id="cuisines" name="cuisines" required />
 				</div>
-				<input className="btn btn-primary" type="submit" value="Add Place" />
+				<input className="btn btn-primary" type="submit" value="Save" />
 			</form>
 		</main>
 	)
 }
 
-export default NewPlaceForm
+export default EditBusinessForm

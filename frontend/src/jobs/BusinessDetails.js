@@ -72,39 +72,32 @@ function BusinessDetails() {
 
 	}
 
-
-
 	let comments = (
 		<h3 className="inactive">
 			No comments yet!
 		</h3>
 	)
-	let rating = (
+	let thumbs = (
 		<h3 className="inactive">
 			Not yet rated
 		</h3>
-	)
+	);
+
 	if (business.comments.length) {
-		let sumRatings = business.comments.reduce((tot, c) => {
-			return tot + c.stars
-		}, 0)
-		let averageRating = Math.round(sumRatings / business.comments.length)
-		let stars = ''
-		for (let i = 0; i < averageRating; i++) {
-			stars += '⭐️'
-		}
-		rating = (
+		let sumThumbsUp = business.comments.filter(comment => comment.thumbsUp).length;
+		let sumThumbsDown = business.comments.filter(comment => !comment.thumbsUp).length;
+
+		thumbs = (
 			<h3>
-				{stars} stars
+				Thumbs Up: {sumThumbsUp} | Thumbs Down: {sumThumbsDown}
 			</h3>
-		)
+		);
 		comments = business.comments.map(comment => {
 			return (
 				<CommentCard key={comment.commentId} comment={comment} onDelete={() => deleteComment(comment)} />
 			)
 		})
 	}
-
 
 	let businessActions = null
 
@@ -120,7 +113,7 @@ function BusinessDetails() {
 			</>
 		)
 	}
-
+	
 	return (
 		<main>
 			<div className="row">
@@ -133,15 +126,15 @@ function BusinessDetails() {
 				<div className="col-sm-6">
 					<h1>{business.name}</h1>
 					<h2>
-						Rating
+						Thumbs Rating
 					</h2>
-					{rating}
+					{thumbs}
 					<br />
 					<h2>
 						Description
 					</h2>
 					<h3>
-						{business.name} has been serving {business.city}, {business.state} since {business.founded}.
+						{business.name} located in {business.city}, {business.state} has been managed by {business.manager} during the time ive worked in this establishment.
 					</h3>
 					<br />
 					<a className="btn btn-warning" onClick={editBusiness}>
@@ -158,7 +151,7 @@ function BusinessDetails() {
 				{comments}
 			</div>
 			<hr />
-			<h2>Got Your Own Rant or Rave?</h2>
+			<h2>Lament Away my Friend...</h2>
 			<NewCommentForm
 				business={business}
 				onSubmit={createComment}

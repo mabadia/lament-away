@@ -5,9 +5,9 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
 
-    // static associate({ Comment }) {
-    //   User.hasMany(Comment, { as: 'author', foreignKey: 'author_id' })
-    // }
+    static associate({ Comment }) {
+      User.hasMany(Comment, { as: 'author', foreignKey: 'authorId' })
+    }
 
   };
   
@@ -16,10 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
-
     },
-    // firstName: DataTypes.STRING,
-    // lastName: DataTypes.STRING,
     username: DataTypes.STRING,
     user_email: DataTypes.STRING,
     user_password: DataTypes.STRING

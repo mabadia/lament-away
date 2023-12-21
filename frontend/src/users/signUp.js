@@ -53,8 +53,6 @@ const SignUp = () => {
         <main>
             <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>
-
-
                 {                    }
 
                 <div className="col-sm-6 form-group">

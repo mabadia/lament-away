@@ -127,6 +127,17 @@ h3 {
 
 }
 
+footer {
+  background-color: #333;
+  color: rgb(61, 127, 165);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+
 #search_btn {
   margin-right: 40px;
 }

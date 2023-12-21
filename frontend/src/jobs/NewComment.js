@@ -8,10 +8,14 @@ function NewComment({ onAddComment }) {
     setNewComment(e.target.value);
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
- 
-    onAddComment({ content: newComment, author: { screenName: 'User2' }, stars: 4 }); 
+    onAddComment({
+      content: newComment,
+      author: { screenName: 'User2' },
+      stars: 4,
+    });
     setNewComment('');
   };
 
@@ -24,7 +28,7 @@ function NewComment({ onAddComment }) {
           value={newComment}
           onChange={handleCommentChange}
         />
-        <button type="submit">Add Comment</button>
+        <button type="submit"> Add a Comment </button>
       </form>
     </div>
   );

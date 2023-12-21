@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Home from "./Home";
 import CommentCard from "./jobs/CommentCard";
-import NewComment from "./NewComment";
+import NewComment from "./jobs/NewComment";
 
 
 

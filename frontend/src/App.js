@@ -7,7 +7,7 @@ import CurrentUserProvider from './contexts/CurrentUser';
 import EditPlaceForm from './jobs/editJobForm';
 import Home from './Home';
 import FYP from './FYP';
-import NewComment from './NewComment';
+import NewComment from './jobs/NewComment';
 import './App.css';
 
 

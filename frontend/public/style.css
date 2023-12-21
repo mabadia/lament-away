@@ -86,8 +86,18 @@ main {
 }
 
 #search_btn {
-    padding-top: 1px;
-    height: 30px;
+    padding: 10px 20px; /* Adjust padding for better button proportions */
+    height: auto; /* Adjust height for better button proportions */
     align-items: center;
     background-color: rgb(157, 180, 249);
+    border: none; /* Remove border for a cleaner look */
+    color: white;
+    font-size: 1em; /* Adjust font size */
+    cursor: pointer; /* Show pointer cursor on hover */
+    border-radius: 5px; /* Add rounded corners for a sleek look */
+    transition: background-color 0.3s ease; /* Add a smooth color transition */
+}
+
+#search_btn:hover {
+    background-color: #32408f; /* Darker color on hover */
 }

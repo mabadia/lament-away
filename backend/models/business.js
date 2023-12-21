@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     city: DataTypes.STRING,
     state: DataTypes.STRING,
     // pic: DataTypes.STRING,
-    
+    // manager: DataTypes.INTEGER
   }, {
     sequelize,
     underscored: true,

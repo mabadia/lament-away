@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router"
 import { useContext } from 'react';
-import CommentCard from '/CommentCard'
+import CommentCard from './commentCard'
 import NewCommentForm from "./NewCommentForm";
 import { CurrentUser } from '../contexts/CurrentUser';
 
@@ -33,7 +33,7 @@ function BusinessDetails() {
 	}
 
 	async function deleteBusiness() {
-		await fetch(`http://localhost:3000/jobs/${business.businessId}`, {
+		await fetch(`http://localhost:5000/jobs/${business.businessId}`, {
 			method: 'DELETE'
 		})
 		history.push('/jobs')

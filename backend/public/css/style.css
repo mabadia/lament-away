@@ -43,7 +43,7 @@ nav a:hover {
 }
 
 .home {
-    
+    display: flex;
     background-image: url(https://media.licdn.com/dms/image/D5612AQGS63QQrmQacg/article-cover_image-shrink_720_1280/0/1689779556763?e=2147483647&v=beta&t=smq7E4O4QHxPY_jDW4dyYIrgtxCAx6PPr_Y0hXN7Bic);
     height: 50vh;
     background-repeat: no-repeat;
@@ -65,7 +65,8 @@ nav a:hover {
 }
 
 .search {
-    padding-left: 95px;
+    margin-left: 9px;
+    
 }
 
 h1 {
@@ -89,5 +90,19 @@ main {
     padding-top: 1px;
     height: 30px;
     align-items: center;
+    align-self: center;
     background-color: rgb(157, 180, 249);
+    display: flex;
 }
+
+footer {
+    background-color: #333;
+    color: rgb(61, 127, 165);
+    padding: 20px;
+    text-align: center;
+    position: bottom;
+    bottom: 0;
+    width: 100%;
+    font-size: 15px;
+    margin-top: 25vh;
+  }

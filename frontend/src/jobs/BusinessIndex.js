@@ -26,12 +26,9 @@ function BusinessIndex(data) {
 					</a>
 				</h2>
 				<p className="text-center">
-					{business.cuisines}
+					This location is located at {business.address} in {business.city}, {business.state}
 				</p>
-				<img style={{ maxWidth: 200 }} src={business.pic} alt={business.name} />
-				<p className="text-center">
-					Located in {business.city}, {business.state}
-				</p>
+				{/* <img style={{ maxWidth: 200 }} src={business.pic} alt={business.name} /> */}
 			</div>
 		)
 	})

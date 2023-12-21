@@ -2,7 +2,7 @@ function CommentCard({ comment, onDelete }) {
     return (
         <div>
         <h2>
-          {comment.rant ? 'Thumbs Down! 👎' : 'Thumbs Up! 👍'}
+          {comment.lament ? 'Thumbs Down! 👎' : 'Thumbs Up! 👍'}
         </h2>
         <h4>{comment.content}</h4>
         <h3>
@@ -10,7 +10,7 @@ function CommentCard({ comment, onDelete }) {
             - {comment.author.screenName} 
           </strong>
         </h3>
-        <h4>Rating: {comment.stars}</h4>
+        <h4>Rating: Thumbs Up: {comment.thumbsUp} | Thumbs Down: {comment.thumbsDown}</h4>
         <button  onClick={onDelete}>
           Delete Comment
         </button>

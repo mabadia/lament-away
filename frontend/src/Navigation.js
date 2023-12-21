@@ -52,7 +52,7 @@ function Navigation() {
                 </li>
                 <li>
                     <a href="#" onClick={() => history.push("/jobs")}>
-                        Business
+                        Businesses 
                     </a>
                 </li>
                 <li>

@@ -5,8 +5,8 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Comment extends Model {
   
-    static associate({ User, Place }) {
-      Comment.belongsTo(Place, { as: 'place', foreignKey: 'place_id' })
+    static associate({ User, Business }) {
+      Comment.belongsTo(Business, { as: 'business', foreignKey: 'business_id' })
       Comment.belongsTo(User, { as: 'author', foreignKey: 'author_id' })
     }
 
@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    placeId: DataTypes.SMALLINT,
+    businessId: DataTypes.SMALLINT,
     authorId: DataTypes.SMALLINT,
     content: DataTypes.STRING,
     stars: DataTypes.FLOAT,

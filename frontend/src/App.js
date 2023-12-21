@@ -6,7 +6,8 @@ import EditJobForm from './jobs/editJobForm';
 import Home from './Home';
 import SignUpForm from './users/SignUpForm'
 import LoginForm from './users/LoginForm'
-
+import BusinessIndex from './jobs/BusinessIndex';
+import NewBusinessForms from './jobs/NewBusinessForms';
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
             <Route exact path="/login" component={LoginForm} />
             <Route exact path="/signUp" component={SignUpForm} />
             <Route exact path="/editJob" component={EditJobForm} />
+            <Route exact path="/jobs" component={BusinessIndex} />
+            <Route exact path="/jobs/new" component={NewBusinessForms} />
           </Switch>
           
         </>

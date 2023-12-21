@@ -17,7 +17,7 @@ function NewBusinessForms() {
 	async function handleSubmit(e) {
 		e.preventDefault()
 
-		await fetch(`http://localhost:3000/jobs`, {
+		await fetch(`http://localhost:5000/jobs`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -73,6 +73,7 @@ function NewBusinessForms() {
 						name="state"
 					/>
 				</div>
+				<input className="btn btn-primary" type="submit" value="Add Company" />
 			</form>
 		</main>
 	)

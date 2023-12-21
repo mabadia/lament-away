@@ -51,8 +51,13 @@ function Navigation() {
                     </a>
                 </li>
                 <li>
-                    <a href="#" onClick={() => history.push("/jobReviews")}>
-                        Write a Lament
+                    <a href="#" onClick={() => history.push("/jobs/new")}>
+                        Add Business
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onClick={() => history.push("/jobs")}>
+                        Reviews
                     </a>
                 </li>
                 <li>

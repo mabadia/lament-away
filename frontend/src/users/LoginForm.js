@@ -10,7 +10,9 @@ function LoginForm() {
 
     const [credentials, setCredentials] = useState({
         user_email: '',
-        user_password: ''
+        user_password: '',
+        username: ''
+        
     })
 
     const [errorMessage, setErrorMessage] = useState(null)
@@ -79,6 +81,18 @@ function LoginForm() {
                             className="form-control"
                             id="user_password"
                             name="user_password"
+                        />
+                    </div>
+                    <div className="col-sm-6 form-group">
+                        <label htmlFor="username">User Name</label>
+                        <input
+                            type="username"
+                            required
+                            value={credentials.username}
+                            onChange={e => setCredentials({ ...credentials, username: e.target.value })}
+                            className="form-control"
+                            id="username"
+                            name="username"
                         />
                     </div>
                 </div>

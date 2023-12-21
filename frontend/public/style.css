@@ -1,103 +1,99 @@
-nav {
-    background-color: cornflowerblue;
+body {
+    background-color: rgba(200, 200, 200, 0.8); /* Light transparent gray */
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  
+  nav {
+    background-color: #333; /* Dark background for navigation bar */
     padding: 10px;
-}
-
-nav ul {
+  }
+  
+  nav ul {
     list-style-type: none;
     margin: 0;
-}
-
-nav li {
+  }
+  
+  nav li {
     display: inline;
     margin-right: 25px;
-}
-
-nav a {
-    color: white;
+  }
+  
+  nav a {
+    color: #fff; /* White text for navigation links */
+    font-size: 1.2em;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    color: #61dafb; /* Light blue on hover */
+  }
+  
+  .active {
+    color: #61dafb; /* Light blue for active link */
+  }
+  
+  #logo {
+    text-decoration: none;
+    color: #fff;
     font-size: 1.5em;
-}
-
-nav a:hover {
-    color: lightblue;
-    text-decoration: none;
-}
-
-.active {
-    color: lightblue;
-    text-decoration: none;
-}
-
-#logo {
-    text-decoration: none;
-}
-
-.Link{
-    padding: 5px;
-    display: flex inline-block;
-    
-}
-
-.navbar-nav {
-    float: right;
-}
-
-.home {
-    
+  }
+  
+  .home {
     background-image: url(https://media.licdn.com/dms/image/D5612AQGS63QQrmQacg/article-cover_image-shrink_720_1280/0/1689779556763?e=2147483647&v=beta&t=smq7E4O4QHxPY_jDW4dyYIrgtxCAx6PPr_Y0hXN7Bic);
     height: 50vh;
     background-repeat: no-repeat;
     background-position: center;
-    padding-left: 605px;
-
-  }
-
-
-.home #search {
-    margin-top: 350px;
-}
-
-.home h2 {
-    color: #ffffff;
-    align-self: center;
-    padding-top: 10px;
-    
-}
-
-.search {
-    padding-left: 95px;
-}
-
-h1 {
-    text-align: center;
-}
-
-#lament_input {
-    padding: 100px;
-}
-
-#company_rating{
-    width: 118px;
-}
-
-main {
-    margin-left: 7vw;
-    margin-right: 7vw;
-}
-
-#search_btn {
-    padding: 10px 20px; /* Adjust padding for better button proportions */
-    height: auto; /* Adjust height for better button proportions */
+    padding-left: 10vw;
+    display: flex;
     align-items: center;
-    background-color: rgb(157, 180, 249);
-    border: none; /* Remove border for a cleaner look */
-    color: white;
-    font-size: 1em; /* Adjust font size */
-    cursor: pointer; /* Show pointer cursor on hover */
-    border-radius: 5px; /* Add rounded corners for a sleek look */
-    transition: background-color 0.3s ease; /* Add a smooth color transition */
-}
-
-#search_btn:hover {
-    background-color: #32408f; /* Darker color on hover */
-}
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .home h2 {
+    font-size: 2em;
+    padding-top: 10px;
+  }
+  
+  .search {
+    padding-left: 20vw;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  #lament_input {
+    padding: 20px;
+    width: 70%;
+    margin: 0 auto;
+  }
+  
+  #company_rating {
+    width: 118px;
+  }
+  
+  main {
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+  
+  #search_btn {
+    padding: 15px 30px;
+    background-color: #61dafb; /* Light blue button */
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #search_btn:hover {
+    background-color: #3a92cc; /* Darker blue on hover */
+  }
+  

@@ -12,12 +12,12 @@ function Navigation() {
         <>
             <li style={{ float: 'right' }}>
                 <a href="#" onClick={() => history.push("/signUp")}>
-                    Sign Up
+                <button id="signUp">Sign Up</button>
                 </a>
             </li>
-            <li style={{ float: 'right' }}>
+            <li style={{ float: 'right'  }}>
                 <a href="#" onClick={() => history.push("/login")}>
-                    Login
+                    <button id="login">Login</button>
                 </a>
             </li>
         </>
@@ -65,8 +65,11 @@ function Navigation() {
                         Contact
                     </a>
                 </li>
+                {/* <h1>Lament Away</h1>  */}
                 {loginActions}
             </ul>
+            
+                
         </nav>
     )
 }

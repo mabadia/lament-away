@@ -94,3 +94,29 @@ body {
   .post-date {
     color: #999;
   }
+
+  #login {
+    transition-duration: 0.4s;
+    border: 1px solid black;
+    border-radius: 20%;
+    background-color: #fffcfc;
+    margin-right: 0px;
+  }
+  
+  #login:hover {
+    background-color: #e3e1e1; /* Green */
+    color: white;
+  }
+
+  #signUp {
+    transition-duration: 0.4s;
+    border: 1px solid black;
+    border-radius: 20%;
+    background-color: #fffcfc;
+    margin-left: 0px;
+  }
+  
+  #signUp:hover {
+    background-color: #acacac; /* Green */
+    color: white;
+  }

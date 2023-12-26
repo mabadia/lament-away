@@ -144,36 +144,30 @@ router.post('/:businessId/comments', async (req, res) => {
 })
 
 router.delete('/:businessId/comments/:commentId', async (req, res) => {
+
     let businessId = Number(req.params.businessId)
+
     let commentId = Number(req.params.commentId)
 
-    if (isNaN(businessId)) {
-        res.status(404).json({ message: `Invalid id "${businessId}"` })
-    } else if (isNaN(commentId)) {
-        res.status(404).json({ message: `Invalid id "${commentId}"` })
+    if (isNaN(businessId) || isNaN(commentId)) {
+        res.status(404).json({ message: `Invalid id "${isNaN(businessId) ? businessId : commentId}"` })
+        return;
+    }
+    const comment = await Comment.findOne({
+        where: { commentId: commentId, businessId: businessId }
+    })
+
+    if (!comment) {
+        res.status(404).json({ message: `Could not find comment with id "${commentId}" for business with id "${businessId}"` })
     } else {
-        const comment = await Comment.findOne({
-            where: { commentId: commentId, businessId: businessId }
-        })
-        if (!comment) {
-            res.status(404).json({ message: `Could not find comment with id "${commentId}" for business with id "${businessId}"` })
-        } else {
-            try {
-                const comment = await Comment.findOne({
-                    where: { commentId: commentId, businessId: businessId }
-                });
-    
-                if (!comment) {
-                    res.status(404).json({ message: `Could not find comment with id "${commentId}" for business with id "${businessId}"` });
-                } else {
-                    await comment.destroy();
-                    res.json(comment);
-                }
-            } catch (error) {
-                console.error(error);
-                res.status(500).json({ message: 'Internal Server Error' });
-            }
+        try {
+            await comment.destroy();
+            res.json(comment);
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ message: 'Internal Server Error' });
         }
+    }
 })
 
 

@@ -13,9 +13,9 @@ First, you'll need a Postgres database to connect to. Follow instructions here t
 Next create a `.env` file inside of `backend`. It will need to contain the following environment variables (change the values for the database to match what you defined in the previous step)
 ```
 PORT=5000
-DB_USERNAME=rest_rant_user
+DB_USERNAME=username 
 DB_PASSWORD=password
-DB_DATABASE=rest_rant
+DB_DATABASE=lament_away
 ```
 
 Next `cd` into `backend` and run `npm install` to install dependencies for the API.
@@ -28,13 +28,13 @@ Finally, in separate terminals, run `npm start` in each folder so that the API a
 | Method | Path                                 | Purpose                                   |
 | ------ | ------------------------------------ | ----------------------------------------- |
 | GET    | /                                    | Home page                                 |
-| GET    | /places                              | Places index page                         |
-| POST   | /places                              | Create new place                          |
-| GET    | /places/:placeId                     | Details about a particular place          |
-| PUT    | /places/:placeId                     | Update a particular place                 |
-| DELETE | /places/:placeId                     | Delete a particular place                 |
-| POST   | /places/:placeId/comments            | Create a comment about a particular place |
-| DELETE | /places/:placeId/comments/:commentId | Delete a comment about a particular place |
+| GET    | /jobs                              | Business index page                         |
+| POST   | /jobs                              | Create new Business                          |
+| GET    | /jobs/:businessId                     | Details about a particular business          |
+| PUT    | /jobs/:businessId                     | Update a particular business                 |
+| DELETE | /jobs/:businessId                     | Delete a particular business                 |
+| POST   | /jobs/:businessId/comments            | Create a comment about a particular business |
+| DELETE | /jobs/:businessId/comments/:commentId | Delete a comment about a particular business |
 
 
 ### App (http://localhost:5000)
@@ -42,7 +42,7 @@ Finally, in separate terminals, run `npm start` in each folder so that the API a
 | --------------------- | ------------------------- | ------------------------------------------------------------------------------- |
 | /                     | `Home.js`                 | Home page                                                                       |
 | /sign-up              | `users/SignUpForm.js`     | Form for creating a new user                                                    |
-| /places               | `places/PlaceIndex.js`    | List of places                                                                  |
-| /places/new           | `places/NewPlaceForm.js`  | Form for creating a new place                                                   |
-| /places/:placeId      | `places/PlaceDetails.js`  | Details of a place, including it's comments, and a form to create a new comment |
-| /places/:placeId/edit | `places/EditPlaceForm.js` | Form for editing a place                                                        |
+| /jobs               | `jobs/BusinessIndex.js`    | List of businesses                                                                  |
+| /jobs/new           | `jobs/NewBusinessForm.js`  | Form for creating a new business                                                   |
+| /jobs/:businessId      | `jobs/BusinessDetails.js`  | Details of a business, including it's comments, and a form to create a new comment |
+| /jobs/:businessId/edit | `jobs/EditBusinessForm.js` | Form for editing a business                                                        |

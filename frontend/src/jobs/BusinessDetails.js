@@ -40,7 +40,7 @@ function BusinessDetails() {
 	}
 
 	async function deleteComment(deletedComment) {
-		await fetch(`http://localhost:3000/jobs/${business.businessId}/comments/${deletedComment.commentId}`, {
+		await fetch(`http://localhost:5000/jobs/${business.businessId}/comments/${deletedComment.commentId}`, {
 			method: 'DELETE'
 		})
 
@@ -52,7 +52,7 @@ function BusinessDetails() {
 	}
 
 	async function createComment(commentAttributes) {
-		const response = await fetch(`http://localhost:3000/jobs/${business.businessId}/comments`, {
+		const response = await fetch(`http://localhost:5000/jobs/${business.businessId}/comments`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'

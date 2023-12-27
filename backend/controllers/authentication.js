@@ -5,9 +5,6 @@ const jwt = require('json-web-token')
 
 const { User } = db
 
-  
-  
-  
 router.post('/', async (req, res) => {
     
     let user = await User.findOne({

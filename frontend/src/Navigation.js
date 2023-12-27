@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useContext } from 'react'
 import { useHistory } from "react-router";
 import { CurrentUser } from './contexts/CurrentUser';
 
@@ -10,12 +10,12 @@ function Navigation() {
 
     let loginActions = (
         <>
-            <li style={{ float: 'right' }}>
+            <li>
                 <a href="#" onClick={() => history.push("/signUp")}>
                 <button id="signUp">Sign Up</button>
                 </a>
             </li>
-            <li style={{ float: 'right'  }}>
+            <li>
                 <a href="#" onClick={() => history.push("/login")}>
                     <button id="login">Login</button>
                 </a>
@@ -43,7 +43,7 @@ function Navigation() {
     }
 
     return (
-        <nav>
+        <nav className='nav' >
             <ul>
                 <li>
                     <a href="#" onClick={() => history.push("/")}>
@@ -68,8 +68,6 @@ function Navigation() {
                 {/* <h1>Lament Away</h1>  */}
                 {loginActions}
             </ul>
-            
-                
         </nav>
     )
 }

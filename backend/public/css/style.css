@@ -1,21 +1,23 @@
 nav {
-    background-color: cornflowerblue;
+    background-color: #279144;
     padding: 10px;
     display: flex;
-}
-nav h1 {
-    width: 260px;
-    justify-self: center;
+    width: 100%;
 }
 
 nav ul {
     list-style-type: none;
-    margin: 0;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; 
+    width: 90%;
 }
 
 nav li {
     display: inline;
-    margin-right: 25px;
 }
 
 nav a {
@@ -25,9 +27,10 @@ nav a {
 }
 
 nav a:hover {
-    color: lightblue;
+    color: black;
     text-decoration: none;
 }
+
 
 .active {
     color: lightblue;
@@ -38,26 +41,24 @@ nav a:hover {
     text-decoration: none;
 }
 
-.Link{
+.Link {
     padding: 5px;
     display: flex inline-block;
-    
+
 }
 
-.navbar-nav {
+/* .navbar-nav {
     float: right;
-}
+} */
 
 .home {
-    
     background-image: url(https://media.licdn.com/dms/image/D5612AQGS63QQrmQacg/article-cover_image-shrink_720_1280/0/1689779556763?e=2147483647&v=beta&t=smq7E4O4QHxPY_jDW4dyYIrgtxCAx6PPr_Y0hXN7Bic);
+    margin: 10px;
     height: 50vh;
     background-repeat: no-repeat;
     background-position: center;
     padding-left: 605px;
-
-  }
-
+}
 
 .home #search {
     margin-top: 0px;
@@ -67,12 +68,11 @@ nav a:hover {
     color: #ffffff;
     align-self: center;
     padding-top: 10px;
-    
 }
 
 .search {
     margin-left: 9px;
-    
+
 }
 
 h1 {
@@ -83,13 +83,8 @@ h1 {
     padding: 100px;
 }
 
-#company_rating{
+#company_rating {
     width: 118px;
-}
-
-main {
-    margin-left: 7vw;
-    margin-right: 7vw;
 }
 
 #search_btn {
@@ -111,6 +106,4 @@ footer {
     width: 100%;
     font-size: 15px;
     margin-top: 25vh;
-  }
-
-  
+}

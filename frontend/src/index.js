@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';  // Correct import for ReactDOM
-import './index.css';
 import App from './App';
 
 

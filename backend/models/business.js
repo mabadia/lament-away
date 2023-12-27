@@ -2,14 +2,10 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-
   class Business extends Model {
-
-
     static associate({ Comment }) {
       Business.hasMany(Comment, { foreignKey: 'business_id', as: 'comments' })
     }
-
   };
 
   Business.init({
@@ -17,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
-
     },
     name: DataTypes.STRING,
     address: DataTypes.STRING,

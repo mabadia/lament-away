@@ -72,8 +72,6 @@ function BusinessDetails() {
 
 	}
 
-
-
 	let comments = (
 		<h3 className="inactive">
 			No comments yet!
@@ -100,7 +98,6 @@ function BusinessDetails() {
 			)
 		})
 	}
-
 
 	let businessActions = null
 
@@ -137,12 +134,7 @@ function BusinessDetails() {
 						{business.name} located in {business.city}, {business.state} has been managed by {business.manager} during the time ive worked in this establishment.
 					</h3>
 					<br />
-					<a className="btn btn-warning" onClick={editBusiness}>
-						Edit
-					</a>{` `}
-					<button type="submit" className="btn btn-danger" onClick={deleteBusiness}>
-						Delete
-					</button>
+					{businessActions}
 				</div>
 			</div>
 			<hr />

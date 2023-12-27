@@ -4,7 +4,7 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Comment extends Model {
-  
+
     static associate({ User, Business }) {
       Comment.belongsTo(Business, { as: 'business', foreignKey: 'business_id' })
       Comment.belongsTo(User, { as: 'author', foreignKey: 'author_id' })
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   Comment.init({
     commentId: {
-      type:  DataTypes.SMALLINT,
+      type: DataTypes.SMALLINT,
       primaryKey: true,
       autoIncrement: true
     },

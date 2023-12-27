@@ -1,28 +1,24 @@
 import Button from 'react-bootstrap/Button'
 
-const React = require('react')
 
 function Home() {
-    return (
+  return (
     <>
       <main>
         <h1>Lament-Away</h1>
         <div className='home'>
           <>
-          <h2>Rate Your Job Experience Today!</h2>
-          <div className='search'>
-            <Button variant="secondary" id="search_btn">Search</Button>{''}
-            <input type="text" placeholder="Search For Companies Here" id="search"/>
-          </div>
-          </> 
+            <h2>Rate Your Job Experience Today!</h2>
+            <div className='search'>
+              <Button variant="secondary" id="search_btn">Search</Button>{''}
+              <input type="text" placeholder="Search For Companies Here" id="search" />
+            </div>
+          </>
         </div>
-      
       </main>
       <footer>
         <div>
-
           <h4>About Lament Away</h4>
-
           <p>Welcome to Lament Away, your go-to platform for job reviews and discussions!</p>
 
           <p> Why We Built This:</p>
@@ -37,12 +33,10 @@ function Home() {
 
           <p>We're committed to continuously improving Lament Away. In the future, expect exciting features, enhanced user interactions, and even more valuable insights to guide your career journey.</p>
 
-
         </div>
       </footer>
-      </>
-    );
-  }
-  
-  export default Home;
-  
+    </>
+  );
+}
+
+export default Home;
